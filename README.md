@@ -1,2 +1,2 @@
 # udacity_first_project
-https://github.com/monaamustafa/udacity_first_project.git
+https://monaamustafa.github.io/udacity_first_project/
