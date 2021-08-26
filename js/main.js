@@ -1,32 +1,34 @@
 let navbar = document.querySelector('ul');
-let listItem = document.querySelectorAll('nav ul li');
-let sectionItems = document.querySelectorAll('.mainSection');
-// dynamic padding top each section 
-window.addEventListener('load', function () {
-    for (let k = 0; k < sectionItems.length; k++) {
-        sectionItems[k].style.paddingTop = navbar.clientHeight + "px";
-    }
-})
+
+const sections = Array.from(document.getElementsByTagName("section"));
+const bodyScroll = document.querySelector('html, body');
+let iconScroll = document.querySelector('.scroll-top');
 // dynamic scroll
-for (let i = 0; i < sectionItems.length; i++) {
-    listItem[i].addEventListener('click', () => {
-        sectionItems[i].scrollIntoView({
+let count=0;
+for(section of sections){
+    const listItem = document.createElement('li');
+    count++;
+    listItem.innerHTML="Item"+count;
+    navbar.appendChild(listItem);
+}
+
+
+const navItems =Array.from(document.getElementsByTagName('li'));
+for (let i = 0; i < sections.length; i++) {
+    navItems[i].addEventListener('click', () => {
+        sections[i].scrollIntoView({
             behavior: 'smooth'
         });
         // remove active class 
-        for (let j = 0; j < listItem.length; j++) {
-            listItem[j].classList.remove('active');
+        for (let j = 0; j < sections.length; j++) {
+            navItems[j].classList.remove('active');
         }
         // add active class to 
-        listItem[i].classList.add('active');
-
-        console.log(listItem[i]);
-
+        navItems[i].classList.add('active');
+        // console.log(listItem[i]);
     });
 }
 //Scroll-top
-let bodyScroll = document.querySelector('html, body');
-let iconScroll = document.querySelector('.scroll-top');
 window.addEventListener('scroll', function () {
     if (bodyScroll.scrollTop >= 60) {
         iconScroll.style.display = 'block';

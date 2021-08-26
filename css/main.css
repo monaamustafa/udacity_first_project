@@ -6,7 +6,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
 }
 ul{
     display: flex;
@@ -19,25 +19,24 @@ li{
     list-style-type: none;
  font-size: 20px;   
  cursor: pointer;
-}
-a{
     text-decoration: none;
     color: aliceblue;
+    padding: 5px 15px;
 }
-li.active a{
+li.active {
     color: blue;
 }
 .active{
     background-color: burlywood;
     color: blue;
     border-radius: 20px;
-    padding: 5px 15px;
+
     /* transition: all 0.3s ease-in-out; */
 }
 .mainSection {
     background-size: cover;
     height: 100vh;
-    width: 100%;
+    /* width: 100vw; */
 }
 .home{
     background-image: url(../image/home.jpg);
